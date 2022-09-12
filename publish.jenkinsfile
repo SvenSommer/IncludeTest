@@ -1,0 +1,6 @@
+@Library('gematik-jenkins-shared-library') _
+pipelineGitHubPublish {
+    GITHUB_PROJECT_NAME = 'api-erp.git'
+    GEMATIK_PROJECT_NAME = 'spezifikation/erp/api-erp.git'
+}
+

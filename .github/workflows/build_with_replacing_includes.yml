@@ -5,7 +5,7 @@ on:
 
   push:
     paths:
-      - architecture.adoc
+      -  docs/architecture.adoc
     branches:
       - '**'
 

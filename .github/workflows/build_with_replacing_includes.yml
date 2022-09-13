@@ -14,8 +14,8 @@ jobs:
       - name: Log directory content
         run: ls resources/docs/
 
-      - name: Reduce docs
-        run: for filename in $(find resources/docs -name '*.adoc'); do newFileName=${filename//-source/} asciidoctor-reducer -o docs/$newFileName $filename done
+      - name: Run scripts to reduce docs
+        run: ./resources/scripts/build_with_replace_includes.sh
 
       - name: Commit readme
         uses: EndBug/add-and-commit@v8

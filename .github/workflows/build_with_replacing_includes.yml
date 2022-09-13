@@ -11,8 +11,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Log directory content
+      - name: Log resources/docs/ directory content
         run: ls resources/docs/
+
+      - name: Log current content
+        run: pwd
 
       - name: Run scripts to reduce docs
         run: ./resources/scripts/build_with_replace_includes.sh

@@ -1,21 +1,4 @@
-:imagesdir: ../images
-:caution-caption: Achtung
-:important-caption: Wichtig
-:note-caption: Hinweis
-:tip-caption: Tip
-:warning-caption: Warnung
-ifdef::env-github[]
-:imagesdir: https://github.com/gematik/api-erp/raw/master/images
-:tip-caption: :bulb:
-:note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
-:caution-caption: :fire:
-:warning-caption: :warning:
-endif::[]
-:toc: macro
-:toclevels: 3
-:toc-title: Inhaltsverzeichnis
-image:gematik_logo.png[width=35%]
+include::./config-source.adoc[]
 
 = E-Rezept API-Dokumentation
 Hier dokumentiert die gematik die Nutzung der Schnittstellen, um sich mit der Telematikinfrastruktur zu verbinden. Das betrifft zum einen die Authentifizierung als Nutzer oder Institution durch den Identity Provider (IDP) und zum anderen den verschlüsselten Datentransport auf Anwendungsebene (xref:anchor-vau-transport["VAU-Transport]").
@@ -253,7 +236,7 @@ Die VAU des E-Rezept-Fachdienstes erzeugt eine HTTP-Response entsprechend des Wo
 
 Ein zusätzlich in den Aufrufen vom E-Rezept-Fachdienst generiertes, wechselndes Nutzerpseudonym wirkt zusätzlich Überlastungsangriffen entgegen, indem Aufrufe ohne Nutzerpseudonym mit einer geringeren Priorität bearbeitet werden.
 
-CAUTION: Die zusätzliche Verschlüsselung erfolgt mit dem AES-GCM-Verfahren, die über ein AuthenticationTag am Ende des Bitstroms die Integrität des transportierten Ciphertextes sicherstellt. Der AES-Schlüssel ergibt sich zufällig aus der Ableitung über den öffentlichen ECC-Schlüssel des VAU-ENC-Zertifikats. Ist der verwendete Random dabei nicht exakt 32 Byte groß, werden die Daten zwar korrekt verschlüsselt, aber das AuthenticationTag passt am Ende nicht zum Ciphertext - der Fachdienst muss das dann gemäß AES-Spezifikation als "manipuliert" ablehnen und antwortet mit einer Fehlermeldung `vau decryption failed: AesGcmException can't finalize AES-GCM decryption;`
+CAUTION: Die zusätzliche Verschlüsselung erfolgt mit dem AES-GCM-Verfahren, die über ein AuthenticationTag am Ende des Bitstroms die Integrität des transportierten Ciphertextes sicherstellt. Der AES-Schlüssel ergibt sich zufällig aus der Ableitung über den öffentlichen ECC-Schlüssel des VAU-ENC-Zertifikats. Sind der verwendete *Random* oder die *X*- und *Y*-Koordinaten des ECC-Schlüssels dabei nicht exakt 32 Byte groß, werden die Daten zwar korrekt verschlüsselt, aber das AuthenticationTag passt am Ende nicht zum Ciphertext - der Fachdienst muss das dann gemäß AES-Spezifikation als "manipuliert" ablehnen und antwortet mit einer Fehlermeldung `vau decryption failed: AesGcmException can't finalize AES-GCM decryption;`
 
 Die folgenden beispielhaften Code-Zeilen prüfen auf eine exakte Länge:
 

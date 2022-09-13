@@ -1,21 +1,4 @@
-:imagesdir: ../images
-:caution-caption: Achtung
-:important-caption: Wichtig
-:note-caption: Hinweis
-:tip-caption: Tip
-:warning-caption: Warnung
-ifdef::env-github[]
-:imagesdir: https://github.com/gematik/api-erp/raw/master/images
-:tip-caption: :bulb:
-:note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
-:caution-caption: :fire:
-:warning-caption: :warning:
-endif::[]
-:toc: macro
-:toclevels: 3
-:toc-title: Inhaltsverzeichnis
-image:gematik_logo.png[width=35%]
+include::./config-source.adoc[]
 
 == E-Rezept FHIR-Package Versionsmanagement
 Auf dieser Seite finden Sie eine Übersicht der FHIR-Release-Pakete der Prozessbeteiligten KBV, DAV, GKV, PKV und gematik. +
@@ -25,9 +8,9 @@ Alle Prozessbeteiligten verantworten je mindestens ein FHIR-Profilierungs-Projek
 ** Festlegungen zu Verordnungen werden von der KBV im Dokument Technische Anlage zur elektronischen Arzneimittelverordnung (E16A)
 link:https://update.kbv.de/ita-update/DigitaleMuster/ERP/KBV_ITA_VGEX_Technische_Anlage_ERP.pdf[KBV_ITA_VGEX_TECHNISCHE_ANLAGE_ERP^] getroffen.
 * *DAV* Definition des Abgabedatensatzes GKV ("eAbgabedaten") https://simplifier.net/erezeptabgabedaten
-** Festlegungen zum eAbgabedatensatz werden im Anhang 2 Kapitel 5 (link:https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/apotheken/technische_anlagen_aktuell/TA7_Anhang_2_20211206.pdf[FHIR-Version zu Technische Anlage 7 zur Arzneimittelabrechnungsvereinbarung gemäß § 300 Absatz 3 SGB V^]) getroffen.
+** Festlegungen zum eAbgabedatensatz werden im Anhang 2 Kapitel 5 (link:https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/apotheken/technische_anlagen_aktuell/TA7_Anhang_2_20220808.pdf[FHIR-Version zu Technische Anlage 7 zur Arzneimittelabrechnungsvereinbarung gemäß § 300 Absatz 3 SGB V^]) getroffen.
 * *GKV* Definition des Abrechnungsdatensatzes für GKV ("TA7 Abrechnungsdaten") https://simplifier.net/eRezeptAbrechnungsdaten
-** Festlegungen zum eAbrechnungsdatensatz werden im Anhang 2 Kapitel 6 (link:https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/apotheken/technische_anlagen_aktuell/TA7_Anhang_2_20211206.pdf[FHIR-Version zu Technische Anlage 7 zur Arzneimittelabrechnungsvereinbarung gemäß § 300 Absatz 3 SGB V^]) getroffen.
+** Festlegungen zum eAbrechnungsdatensatz werden im Anhang 2 Kapitel 6 (link:https://www.gkv-datenaustausch.de/media/dokumente/leistungserbringer_1/apotheken/technische_anlagen_aktuell/TA7_Anhang_2_20220808.pdf[FHIR-Version zu Technische Anlage 7 zur Arzneimittelabrechnungsvereinbarung gemäß § 300 Absatz 3 SGB V^]) getroffen.
 * *PKV* Definition des Abrechnungsdatensatzes für PKV https://simplifier.net/erezeptabgabedatenpkv
 * *gematik* Definition des Workflows https://simplifier.net/erezept-workflow
 ** Festlegungen zur Quittung werden von der gematik in deren Fachportal im Dokument Spezifikation Datenmodell E-Rezept link:https://fachportal.gematik.de/fachportal-import/files/gemSpec_DM_eRp_V1.3.0.pdf[gemSpec_DM_eRp^] (Version der zugelassenen Fachdienst Produktversion) getroffen.
@@ -45,6 +28,9 @@ IMPORTANT: Die Hinweise und konkreten Regelungen zu stichtagsbezogenen Versions�
 
 TIP: Hinweise zur aktuellen FHIR-Konfiguration des E-Rezept-Fachdienstes in der Referenzumgebung RU finden Sie auf link:https://wiki.gematik.de/display/RUAAS/E-Rezept@RU[E-Rezept@RU^]
 
+== Übersicht Timeline
+image:fhir_version_timeline.png[width=100%]
+
 == Versionsübergang 30.06.2023 -> 01.07.2023
 Annahmen:
 
@@ -55,7 +41,7 @@ Annahmen:
 MedicationDispense.whenHandedOver).
 * Abrechnungszentren vollziehen den Profilwechsel zum 01.08.
 ** Die Version der eRezeptAbrechnungsdaten hängt vom Abrechnungsmonat (siehe TA1) ab (im Profil GKVSV_PR_TA7_Sammelrechnung_Composition:
-Composition.date). 
+Composition.date).
 * maximale Gültigkeitsdauer E-Rezept (Einlösefrist): 3 Monate
 
 [cols=""]

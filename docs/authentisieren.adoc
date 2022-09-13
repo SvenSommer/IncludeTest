@@ -1,3 +1,5 @@
+// asciidoc settings for DE (German)
+// ==================================
 :imagesdir: ../images
 :caution-caption: Achtung
 :important-caption: Wichtig
@@ -376,7 +378,7 @@ Die VAU des E-Rezept-Fachdienstes erzeugt eine HTTP-Response entsprechend des Wo
 
 Ein zusätzlich in den Aufrufen vom E-Rezept-Fachdienst generiertes, wechselndes Nutzerpseudonym wirkt zusätzlich Überlastungsangriffen entgegen, indem Aufrufe ohne Nutzerpseudonym mit einer geringeren Priorität bearbeitet werden.
 
-CAUTION: Die zusätzliche Verschlüsselung erfolgt mit dem AES-GCM-Verfahren, die über ein AuthenticationTag am Ende des Bitstroms die Integrität des transportierten Ciphertextes sicherstellt. Der AES-Schlüssel ergibt sich zufällig aus der Ableitung über den öffentlichen ECC-Schlüssel des VAU-ENC-Zertifikats. Ist der verwendete Random dabei nicht exakt 32 Byte groß, werden die Daten zwar korrekt verschlüsselt, aber das AuthenticationTag passt am Ende nicht zum Ciphertext - der Fachdienst muss das dann gemäß AES-Spezifikation als "manipuliert" ablehnen und antwortet mit einer Fehlermeldung `vau decryption failed: AesGcmException can't finalize AES-GCM decryption;`
+CAUTION: Die zusätzliche Verschlüsselung erfolgt mit dem AES-GCM-Verfahren, die über ein AuthenticationTag am Ende des Bitstroms die Integrität des transportierten Ciphertextes sicherstellt. Der AES-Schlüssel ergibt sich zufällig aus der Ableitung über den öffentlichen ECC-Schlüssel des VAU-ENC-Zertifikats. Sind der verwendete *Random* oder die *X*- und *Y*-Koordinaten des ECC-Schlüssels dabei nicht exakt 32 Byte groß, werden die Daten zwar korrekt verschlüsselt, aber das AuthenticationTag passt am Ende nicht zum Ciphertext - der Fachdienst muss das dann gemäß AES-Spezifikation als "manipuliert" ablehnen und antwortet mit einer Fehlermeldung `vau decryption failed: AesGcmException can't finalize AES-GCM decryption;`
 
 Die folgenden beispielhaften Code-Zeilen prüfen auf eine exakte Länge:
 

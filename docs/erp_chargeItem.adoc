@@ -1,3 +1,5 @@
+// asciidoc settings for DE (German)
+// ==================================
 :imagesdir: ../images
 :caution-caption: Achtung
 :important-caption: Wichtig
@@ -7,7 +9,7 @@
 :toc: macro
 :toclevels: 3
 :toc-title: Inhaltsverzeichnis
-image:gematik_logo.jpg[width=35%]
+image:gematik_logo.png[width=35%]
 
 = E-Rezept API-Dokumentation für die PKV-Abrechnungsinformationen
 Hier dokumentiert die gematik die Nutzung der Schnittstellen rund um das E-Rezept für die elektronische Verarbeitung und Speicherung von Abrechnungsinformationen für PKV-Versicherte.

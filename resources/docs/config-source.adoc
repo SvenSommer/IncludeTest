@@ -1,14 +1,20 @@
 // asciidoc settings for DE (German)
 // ==================================
+:imagesdir: ../images
 :caution-caption: Achtung
 :important-caption: Wichtig
 :note-caption: Hinweis
 :tip-caption: Tip
 :warning-caption: Warnung
-
-:appendix-caption: Anhang
-:example-caption: Beispiel
-:figure-caption: Abbildung
-:table-caption: Tabelle
-
-
+ifdef::env-github[]
+:imagesdir: https://github.com/gematik/api-erp/raw/master/images
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:toc: macro
+:toclevels: 3
+:toc-title: Inhaltsverzeichnis
+image:gematik_logo.png[width=35%]

@@ -1,3 +1,5 @@
+// asciidoc settings for DE (German)
+// ==================================
 :imagesdir: ../images
 :caution-caption: Achtung
 :important-caption: Wichtig

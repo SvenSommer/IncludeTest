@@ -1,21 +1,4 @@
-:imagesdir: ../images
-:caution-caption: Achtung
-:important-caption: Wichtig
-:note-caption: Hinweis
-:tip-caption: Tip
-:warning-caption: Warnung
-ifdef::env-github[]
-:imagesdir: https://github.com/gematik/api-erp/raw/master/images
-:tip-caption: :bulb:
-:note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
-:caution-caption: :fire:
-:warning-caption: :warning:
-endif::[]
-:toc: macro
-:toclevels: 3
-:toc-title: Inhaltsverzeichnis
-image:gematik_logo.png[width=35%]
+include::./config-source.adoc[]
 
 == E-Rezept Benachrichtigungen für Apotheken
 Auf dieser Seite dokumentiert die gematik die Schnittstellen des E-Rezept-Fachdienstes für Apotheken, über welche sie sich für Benachrichtigungen bei neuen Communications, registrieren können.

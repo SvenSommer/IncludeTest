@@ -1,18 +1,7 @@
-name: Build with replacing includes
-
-
-on:
-
-  push:
-    paths:
-      -  resources/docs/*
-    branches:
-      - '**'
-
-
+name: build-adoc-files
+on: [push]
 jobs:
-
-  build:
+  build-with-include-replacing:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:

@@ -17,6 +17,9 @@ jobs:
       - name: Log current content
         run: pwd
 
+      - name: Log current directory content
+        run: ls -la
+
       - name: Run scripts to reduce docs
         run: ./resources/scripts/build_with_replace_includes.sh
 

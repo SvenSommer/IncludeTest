@@ -11,6 +11,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Log directory content
+        run: ls resources/docs/
+
       - name: Reduce docs
         run: for filename in $(find resources/docs -name '*.adoc'); do newFileName=${filename//-source/} asciidoctor-reducer -o docs/$newFileName $filename done
 
